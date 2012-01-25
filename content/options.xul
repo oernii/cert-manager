@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <setting title="Do Something" type="control">  
+      <button id="myaddon-button" label="CertManager.getCertNumber" oncommand="alert(CertManager.getCertNumber());"/>  
+    </setting>  
+
+</vbox>

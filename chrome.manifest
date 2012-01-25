@@ -1,0 +1,6 @@
+content cert-manager  content/
+locale  cert-manager  en-US  locale/en-US/
+skin    cert-manager  classic/1.0  skin/
+overlay	chrome://browser/content/browser.xul	chrome://cert-manager/content/overlay.xul
+override    chrome://cert-manager/content/settings.xul         chrome://cert-manager/content/options.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+

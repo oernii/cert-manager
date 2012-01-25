@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://cert-manager/skin/overlay.css" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % overlayDTD SYSTEM "chrome://cert-manager/locale/overlay.dtd">
+%overlayDTD;
+]>
+
+<overlay id="cert-manager-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/javascript" src="chrome://cert-manager/content/overlay.js"/>
+<!--
+  <script type="application/x-javascript" src="chrome://cert-manager/content/overlay.js"/>
+  <script type="application/x-javascript" src="chrome://cert-manager/content/cert-manager.js"></script>
+  <script type="application/x-javascript">
+          <![CDATA[
+
+          addEventListener("load", function (event) { CertManager.load(); }, false);
+          addEventListener("unload", function (event) { CertManager.unload(); }, false);
+
+          ]]>
+  </script>
+-->
+
+  <hbox id="pageactions-container">
+    <pageaction id="cert-manager-mobileify-page"
+      title="Switch to Mobile"
+      onclick="CertManager.switchCurrentPage();"/>
+  </hbox>
+
+  <richlistbox id="context-commands">
+    <richlistitem class="context-command" id="cert-manager-context-mobileify" type="link-openable" onclick="CertManager.openInMobileWikipediaPage();">
+      <label value="Open in Mobile Wikipedia"/>
+    </richlistitem>
+  </richlistbox>
+
+</overlay>
