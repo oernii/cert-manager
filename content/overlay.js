@@ -1,3 +1,8 @@
+const nsX509CertDB = "@mozilla.org/security/x509certdb;1";
+const nsIX509CertDB = Components.interfaces.nsIX509CertDB;
+const nsIX509Cert = Components.interfaces.nsIX509Cert;
+const nsIFilePicker = Components.interfaces.nsIFilePicker;
+
 // Main code for add-on
 var CertManager = {
   onLoad : function(aEvent) {
@@ -70,9 +75,28 @@ var CertManager = {
       return counter;
   },
 
-  echoFile: function() {
-	alert('extensions.cert-manager.importfile');
-	// extensions.cert-manager.importfile
+  importCAcert: function() {
+      	//alert ( Services.prefs.getCharPref("extensions.cert-manager.importfile") );
+	certdb = Components.classes[nsX509CertDB].getService(nsIX509CertDB);
+	//certdb.importCertsFromFile(null, Services.prefs.getCharPref("extensions.cert-manager.importfile"), nsIX509Cert.CA_CERT);
+
+	var filePicker = Components.classes[ "@mozilla.org/filepicker;1" ].createInstance( nsIFilePicker );
+  	filePicker.init( window, "Import Certificate",  nsIFilePicker.modeOpen );
+  	filePicker.appendFilter( "Certificates", 
+			   "*.crt; *.cert; *.cer; *.pem; *.der" );
+  	filePicker.appendFilters(nsIFilePicker.filterAll);
+  	var result = filePicker.show();
+
+  	if (result == nsIFilePicker.returnOK) {
+     	   var theFile = filePicker.file;
+           var certDB = Components.classes[ "@mozilla.org/security/x509certdb;1" ]
+                     .getService( nsIX509CertDB );
+
+	   certdb.importCertsFromFile(null, theFile, nsIX509Cert.CA_CERT);
+	}
+	else
+		alert('nepodarilo sa vybrat subor');
+	return;
   }
 
 };

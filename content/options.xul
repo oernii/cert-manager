@@ -2,10 +2,16 @@
 
 <vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <setting pref="extensions.cert-manager.importfile" type="file" title="File"/>  
+    <!--
+         <setting pref="extensions.cert-manager.importfile" type="file" title="File"/>  
+	-->
 
-    <setting title="Echo file" type="control">  
-      <button id="myaddon-button" label="CertManager.echofile" oncommand="CertManager.echoFile();"/>  
+    <setting title="Import CA certificate" type="control">  
+      <button id="myaddon-button" label="CertManager.importCAfile" oncommand="CertManager.importCAcert();"/>  
+    </setting>  
+
+    <setting title="Import USER certificate" type="control">  
+      <button id="myaddon-button" label="CertManager.importUSERfile" oncommand="CertManager.importUSERcert();"/>  
     </setting>  
 
     <setting title="Do Something" type="control">  
