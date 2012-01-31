@@ -9,19 +9,6 @@
 
 <overlay id="cert-manager-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script type="application/javascript" src="chrome://cert-manager/content/overlay.js"/>
-<!--
-  <script type="application/x-javascript" src="chrome://cert-manager/content/overlay.js"/>
-  <script type="application/x-javascript" src="chrome://cert-manager/content/cert-manager.js"></script>
-  <script type="application/x-javascript">
-          <![CDATA[
-
-          addEventListener("load", function (event) { CertManager.load(); }, false);
-          addEventListener("unload", function (event) { CertManager.unload(); }, false);
-
-          ]]>
-  </script>
--->
-
   <hbox id="pageactions-container">
     <pageaction id="cert-manager-mobileify-page"
       title="Switch to Mobile"

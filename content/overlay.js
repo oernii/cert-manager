@@ -17,8 +17,8 @@ var CertManager = {
   },
 
   getCertNumber2: function() {
-      var moz_x509certdb2 = CC['@mozilla.org/security/x509certdb;1']
-                            .getService(CI.nsIX509CertDB2);
+      var moz_x509certdb2 = Components.classes['@mozilla.org/security/x509certdb;1']
+                            .getService(Components.interfaces.nsIX509CertDB2);
       var allCertificates = moz_x509certdb2.getCerts();
       var enumCertificates = allCertificates.getEnumerator();
 
@@ -27,7 +27,7 @@ var CertManager = {
       while (enumCertificates.hasMoreElements())
       {
         var thisElement = enumCertificates.getNext();
-        var thisCertificate = thisElement.QueryInterface(CI.nsIX509Cert);
+        var thisCertificate = thisElement.QueryInterface(Components.interfaces.nsIX509Cert);
 
         var DER = thisCertificate.getRawDER({});
 	/*
@@ -44,8 +44,8 @@ var CertManager = {
   },
 
   getCertNumber: function() {
-      var moz_x509certdb2 = CC['@mozilla.org/security/x509certdb;1']
-                            .getService(CI.nsIX509CertDB2);
+      var moz_x509certdb2 = Components.classes['@mozilla.org/security/x509certdb;1']
+                            .getService(Components.interfaces.nsIX509CertDB2);
       var allCertificates = moz_x509certdb2.getCerts();
       var enumCertificates = allCertificates.getEnumerator();
 
@@ -54,7 +54,7 @@ var CertManager = {
       while (enumCertificates.hasMoreElements())
       {
         var thisElement = enumCertificates.getNext();
-        var thisCertificate = thisElement.QueryInterface(CI.nsIX509Cert);
+        var thisCertificate = thisElement.QueryInterface(Components.interfaces.nsIX509Cert);
 
         var DER = thisCertificate.getRawDER({});
 	/*
@@ -69,6 +69,11 @@ var CertManager = {
       }
       return counter;
   },
+
+  echoFile: function() {
+	alert('extensions.cert-manager.importfile');
+	// extensions.cert-manager.importfile
+  }
 
 };
 

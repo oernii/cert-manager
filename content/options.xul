@@ -2,6 +2,12 @@
 
 <vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
+    <setting pref="extensions.cert-manager.importfile" type="file" title="File"/>  
+
+    <setting title="Echo file" type="control">  
+      <button id="myaddon-button" label="CertManager.echofile" oncommand="CertManager.echoFile();"/>  
+    </setting>  
+
     <setting title="Do Something" type="control">  
       <button id="myaddon-button" label="CertManager.getCertNumber" oncommand="alert(CertManager.getCertNumber());"/>  
     </setting>  
