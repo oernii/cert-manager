@@ -97,7 +97,30 @@ var CertManager = {
 	else
 		alert('nepodarilo sa vybrat subor');
 	return;
-  }
+  },
+
+  importUSERcert: function() {
+	certdb = Components.classes[nsX509CertDB].getService(nsIX509CertDB);
+
+	var filePicker = Components.classes[ "@mozilla.org/filepicker;1" ].createInstance( nsIFilePicker );
+  	filePicker.init( window, "Import Certificate",  nsIFilePicker.modeOpen );
+  	filePicker.appendFilter( "Certificates", 
+			   "*.crt; *.cert; *.cer; *.pem; *.der" );
+  	filePicker.appendFilters(nsIFilePicker.filterAll);
+  	var result = filePicker.show();
+
+  	if (result == nsIFilePicker.returnOK) {
+     	   var theFile = filePicker.file;
+           var certDB = Components.classes[ "@mozilla.org/security/x509certdb;1" ]
+                     .getService( nsIX509CertDB );
+
+	   //certdb.importCertsFromFile(null, theFile, nsIX509Cert.CA_CERT);
+	   certdb.importPKCS12File(null, theFile);
+	}
+	else
+		alert('nepodarilo sa vybrat subor');
+	return;
+  },
 
 };
 
