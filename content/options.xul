@@ -4,18 +4,21 @@
 
     <!--
          <setting pref="extensions.cert-manager.importfile" type="file" title="File"/>  
-	-->
 
     <setting title="Import CA certificate" type="control">  
       <button id="myaddon-button" label="CertManager.importCAfile" oncommand="CertManager.importCAcert();"/>  
     </setting>  
+	-->
 
-    <setting title="Import USER certificate" type="control">  
-      <button id="myaddon-button" label="CertManager.importUSERfile" oncommand="CertManager.importUSERcert();"/>  
+    <setting title="Import USER certificate" type="control">
+	Must be PKCS12 (*.p12)  
+      <button id="myaddon-button" label="Select pkcs12 file" oncommand="CertManager.importUSERcert();"/>  
     </setting>  
 
+<!--
     <setting title="Do Something" type="control">  
       <button id="myaddon-button" label="CertManager.getCertNumber" oncommand="alert(CertManager.getCertNumber());"/>  
     </setting>  
+-->
 
 </vbox>

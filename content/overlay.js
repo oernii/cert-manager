@@ -35,13 +35,7 @@ var CertManager = {
         var thisCertificate = thisElement.QueryInterface(Components.interfaces.nsIX509Cert);
 
         var DER = thisCertificate.getRawDER({});
-	/*
-        this.writeCertificateFile(DER, DER.length, fp.file.path,
-                                    counter+1,
-                                    thisCertificate.commonName,
-                                    thisCertificate.organization);
-	*/
-	dump('CN:' + thisCertificate.commonName + ', org:' + thisCertificate.organization + '\n' );
+	//dump('CN:' + thisCertificate.commonName + ', org:' + thisCertificate.organization + '\n' );
 	console.debug(thisCertificate);
         counter++;
       }
@@ -94,8 +88,6 @@ var CertManager = {
 
 	   certdb.importCertsFromFile(null, theFile, nsIX509Cert.CA_CERT);
 	}
-	else
-		alert('nepodarilo sa vybrat subor');
 	return;
   },
 
@@ -117,8 +109,6 @@ var CertManager = {
 	   //certdb.importCertsFromFile(null, theFile, nsIX509Cert.CA_CERT);
 	   certdb.importPKCS12File(null, theFile);
 	}
-	else
-		alert('nepodarilo sa vybrat subor');
 	return;
   },
 
