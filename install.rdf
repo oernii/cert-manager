@@ -5,8 +5,8 @@
         <em:id>cert-manager@oernii.sk</em:id>
         <em:type>2</em:type>
         <em:name>Cert Manager</em:name>
-        <em:version>1</em:version>
-        <em:description>Certificate manager for mobile android</em:description>
+        <em:version>1.2</em:version>
+        <em:description>This addon allow you to import a CA certificate (*.pem) and a user certificate with key (pkcs12 *.p12). That is all. No deletion/modification for now.</em:description>
         <em:creator>Ernest Beinrohr</em:creator>
         <!-- <em:contributor></em:contributor> -->
         <!-- <em:iconURL></em:iconURL> -->
@@ -16,8 +16,8 @@
         <em:targetApplication>
             <Description>
                 <em:id>{a23983c0-fd0e-11dc-95ff-0800200c9a66}</em:id>
-                <em:minVersion>4.0</em:minVersion>
-                <em:maxVersion>19.0</em:maxVersion>
+                <em:minVersion>9.0</em:minVersion>
+                <em:maxVersion>12.0</em:maxVersion>
             </Description>
         </em:targetApplication>
 
