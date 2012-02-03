@@ -9,16 +9,4 @@
 
 <overlay id="cert-manager-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script type="application/javascript" src="chrome://cert-manager/content/overlay.js"/>
-  <hbox id="pageactions-container">
-    <pageaction id="cert-manager-mobileify-page"
-      title="Switch to Mobile"
-      onclick="CertManager.switchCurrentPage();"/>
-  </hbox>
-
-  <richlistbox id="context-commands">
-    <richlistitem class="context-command" id="cert-manager-context-mobileify" type="link-openable" onclick="CertManager.openInMobileWikipediaPage();">
-      <label value="Open in Mobile Wikipedia"/>
-    </richlistitem>
-  </richlistbox>
-
 </overlay>

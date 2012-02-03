@@ -4,18 +4,12 @@
 
     <setting title="Import CA certificate" type="control">  
 	CA certificate in PEM format
-      <button id="myaddon-button" label="CertManager.importCAfile" oncommand="CertManager.importCAcert();"/>  
+      <button id="myaddon-button" label="Select PEM file" oncommand="CertManager.importCAcert();"/>  
     </setting>  
 
     <setting title="Import USER certificate" type="control">
 	Must be PKCS12 (*.p12)  
       <button id="myaddon-button" label="Select pkcs12 file" oncommand="CertManager.importUSERcert();"/>  
     </setting>  
-
-<!--
-    <setting title="Do Something" type="control">  
-      <button id="myaddon-button" label="CertManager.getCertNumber" oncommand="alert(CertManager.getCertNumber());"/>  
-    </setting>  
--->
 
 </vbox>

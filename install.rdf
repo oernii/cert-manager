@@ -5,7 +5,7 @@
         <em:id>cert-manager@oernii.sk</em:id>
         <em:type>2</em:type>
         <em:name>Cert Manager</em:name>
-        <em:version>1.2</em:version>
+        <em:version>1.3</em:version>
         <em:description>This addon allow you to import a CA certificate (*.pem) and a user certificate with key (pkcs12 *.p12). That is all. No deletion/modification for now.</em:description>
         <em:creator>Ernest Beinrohr</em:creator>
         <!-- <em:contributor></em:contributor> -->
