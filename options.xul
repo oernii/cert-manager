@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <setting title="Import CA certificate" type="control">  
+	CA certificate in PEM format
+      <button id="myaddon-button" label="Select PEM file" oncommand="CertManager.importCAcert();"/>  
+    </setting>  
+
+    <setting title="Import USER certificate" type="control">
+	Must be PKCS12 (*.p12)  
+      <button id="myaddon-button" label="Select pkcs12 file" oncommand="CertManager.importUSERcert();"/>  
+    </setting>  
+
+</vbox>
